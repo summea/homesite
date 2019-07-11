@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Table } from 'semantic-ui-react';
+import { Image, List } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 export class AlbumList extends React.Component {
@@ -27,26 +27,20 @@ export class AlbumList extends React.Component {
 
   render() {
     const albumsList = this.state.albums.map((album) =>
-      <Table.Row key={album.title}>
-        <Table.Cell>{album.title}</Table.Cell>
-        <Table.Cell>{album.summary}</Table.Cell>
-      </Table.Row>
+      <List.Item key={album.title}>
+        <Image avatar src={album.image} />
+        <List.Content>
+          <List.Header>{album.title}</List.Header>
+          <List.Description>{album.summary}</List.Description>
+        </List.Content>
+      </List.Item>
     );
     
     return (
       <div>
-        <h2>All Albums</h2>
-        <Table celled>
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Summary</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            {albumsList}
-          </Table.Body>
-        </Table>
+        <List>
+          {albumsList}
+        </List>
       </div>
     )
   }
