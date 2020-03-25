@@ -1,5 +1,4 @@
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render
 
 from albums.models import Album
 from albums.serializers import AlbumSerializer
