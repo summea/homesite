@@ -14,7 +14,6 @@ export function LoginPage() {
 
   let submitButton = (event) => {
     event.preventDefault();
-    var that = this;    
 
     // get access token
     axios.post('http://127.0.0.1:8000/api/token/', {        

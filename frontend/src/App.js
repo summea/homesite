@@ -19,7 +19,7 @@ function App() {
 }
 
 const fakeAuth = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   authenticate(cb) {
     fakeAuth.isAuthenticated = true;
   },
